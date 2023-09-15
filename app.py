@@ -4,13 +4,21 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 def main():
-    # Get user input for 'Open', 'High', 'Low', and 'Volume'
-    user_input = st.text_input("Enter Open, High, Low, Volume (comma-separated):")
-    if user_input:
-        open_val, high, low, volume = user_input.split(',')
+    # Get user input for 'Open'
+    open_val = st.text_input("Enter Open:")
 
+    # Get user input for 'High'
+    high = st.text_input("Enter High:")
+
+    # Get user input for 'Low'
+    low = st.text_input("Enter Low:")
+
+    # Get user input for 'Volume'
+    volume = st.text_input("Enter Volume:")
+
+    if open_val and high and low and volume:
         # Load the model
-        the_best_model = joblib.load('svr_model.pkl')
+        the_best_model = joblib.load('rf_model.pkl')
         scaler = joblib.load('scaler.pkl')
 
         # Prepare user input features
@@ -32,4 +40,3 @@ def app():
 
 if __name__ == "__main__":
     app()
-
