@@ -4,6 +4,8 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 def main():
+    st.header("Stock Price Predictor")
+
     # Get user input for 'Open'
     open_val = st.text_input("Enter Open:")
 
@@ -30,13 +32,8 @@ def main():
         # Make a prediction
         predicted_close = the_best_model.predict(user_input_features)
 
-        # Print the predicted close price
-        st.write(f"The predicted close price is: {predicted_close[0]:.2f}")
-
-def app():
-    st.title("Stock Price Predictor")
-
-    main()
+        # Display the prediction
+        st.success(f"The predicted close price is: {predicted_close[0]:.2f}")
 
 if __name__ == "__main__":
-    app()
+    main()
