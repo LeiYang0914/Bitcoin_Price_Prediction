@@ -50,7 +50,7 @@ def main():
 
     if open_val and high and low and volume:
         # Load the model
-        the_best_model = joblib.load('rf_model.pkl')
+        the_best_model = joblib.load('svr_model.pkl')
         scaler = joblib.load('scaler.pkl')
 
         # Prepare user input features
