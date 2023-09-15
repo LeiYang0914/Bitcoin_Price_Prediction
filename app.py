@@ -4,7 +4,25 @@ import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 
 def main():
-    st.header("Stock Price Predictor")
+    st.markdown("""
+    <style>
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<div class='header'><h1>Stock Price Predictor</h1></div>", unsafe_allow_html=True)
 
     # Get user input for 'Open'
     open_val = st.text_input("Enter Open:")
